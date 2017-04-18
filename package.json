@@ -12,6 +12,9 @@
   },
   "author": "Alemneh Asefa <alemneh.asefa@outlook.com> (http://alemneh.com/)",
   "license": "MIT",
+  "bin": {
+    "snippet": "./index.js"
+  },
   "bugs": {
     "url": "https://github.com/alemneh/commander-cli/issues"
   },
