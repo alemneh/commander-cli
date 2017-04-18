@@ -9,6 +9,18 @@ const prompt = require('co-prompt');
 const program = require('commander');
 
 
+function saveFile(username, password) {
+  var state = {};
+  state.username = username;
+  state.password = password;
+  var json = JSON.stringify(state);
+  fs.writeFile('state.json', json, (err) => {
+    if (err) throw err;
+
+    console.log('File saved!');
+  });
+}
+
 program
   .arguments('<file>')
   .option('-u, --username <username>', 'The user to authenticate as')
@@ -17,7 +29,7 @@ program
     co(function *() {
       var username = yield prompt('username: ');
       var password = yield prompt.password('password: ');
-
+      saveFile(username);
       var fileSize = fs.statSync(file).size;
       var fileStream = fs.createReadStream(file);
       var barOpts = {
