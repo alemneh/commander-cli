@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/alemneh/commander-cli/issues"
   },
-  "homepage": "https://github.com/alemneh/commander-cli#readme"
+  "homepage": "https://github.com/alemneh/commander-cli#readme",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
 }
