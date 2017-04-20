@@ -10,11 +10,15 @@ const program = require('commander');
 
 
 function saveFile(username, password) {
-  var state = {};
+  var state = {
+    arrary: []
+  };
   state.username = username;
   state.password = password;
+  state.arrary.push(username);
+  state.arrary.push(password);
   var json = JSON.stringify(state);
-  fs.writeFile('state.json', json, (err) => {
+  fs.writeFile('state.json', json, 'utf8', (err) => {
     if (err) throw err;
 
     console.log('File saved!');
